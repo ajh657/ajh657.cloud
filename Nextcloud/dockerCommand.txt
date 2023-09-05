@@ -12,5 +12,4 @@ sudo docker run \
 --env NEXTCLOUD_UPLOAD_LIMIT=1000G \
 --env NEXTCLOUD_DATADIR="nextcloud_aio_nextcloud_datadir" \
 --env NEXTCLOUD_MAX_TIME=3600000000 \
---env SKIP_DOMAIN_VALIDATION=true \
 nextcloud/all-in-one:latest
