@@ -1,3 +1,3 @@
 navidrome.ajh657.cloud {
-	reverse_proxy localhost:4533
+	reverse_proxy 192.168.0.113:4533
 }
