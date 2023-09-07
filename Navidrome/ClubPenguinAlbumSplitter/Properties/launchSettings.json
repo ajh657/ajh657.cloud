@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ClubPenguinAlbumSplitter": {
+      "commandName": "Project",
+      "commandLineArgs": "H:\\Documents\\Rip\\ClubPenguin\\converted\\"
+    }
+  }
+}

@@ -2,15 +2,25 @@ $files = Get-ChildItem "./"
 
 foreach ($item in $files) {
     <# $item is the current item #>
-    if ($item.Name -match "(?<=- ).*(?=, )") {
+    if ($item.Name -match '(?<=- ).*(?=, )') {
         <# Action to perform if the condition is true #>
 
-        $newfilename = $item.Name -replace "(?<=- ).*(?= ｜)", $item.Name
+        $filepath = $item.FullName
 
-        Copy-Item -Path "./" + $item.Name -Destination "./" + $newfilename
+        echo $filepath
 
-        $oldfilenamefixed = $item.Name -replace "(?<=- ).*(?=, ), ", ""
+        $newfilename = $filepath -replace ',(?<=,).*(?= ｜)', ''
 
-        Rename-Item -Path "./" + $item.Name -NewName "./" + $oldfilenamefixed
+        echo "New filename replaced $($newfilename)"
+
+        Copy-Item $filepath -Destination $newfilename
+
+        echo "Copied $($filepath) to $($newfilename)"
+
+        $oldfilenamefixed = $item.Name -replace '(?<=- ).*(?=, ), ', ''
+
+        echo "oldfixedfilename $($oldfilenamefixed)"
+
+        Rename-Item -Path $filepath -NewName $oldfilenamefixed
     }
 }

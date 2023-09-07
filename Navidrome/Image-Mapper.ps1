@@ -4,14 +4,11 @@ foreach ($item in $files) {
     <# $item is the current item #>
 
     $imageName = $item.FullName -replace ".mp3", ".png"
+
     $fileName = $item.FullName
+    $fileNameOutput = $filename -replace ".mp3", "output.mp3"
     $simpleName = $item.Name
 
-
-    ffmpeg -i $fileName -i $imageName -c copy -map 0 -map 1 $fileName + "output"
-    
-    Remove-Item $fileName
-
-    Rename-Item -Path $fileName + "output" -NewName $simpleName
+    ffmpeg -i $fileName -i $imageName -c copy -map 0 -map 1 "./Mapped/$($simpleName)"
 
 }
