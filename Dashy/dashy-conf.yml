@@ -1,0 +1,20 @@
+---
+# Page meta info, like heading, footer text and nav links
+pageInfo:
+  title: AJH657 Cloud
+  description: Welcome to ajh657 cloud enviroment!
+  navLinks:
+
+# Optional app settings and configuration
+appConfig:
+  theme: colorful
+
+# Main content - An array of sections, each containing an array of items
+sections:
+- name: Self-Hosted
+  icon: fa-solid fa-sitemap
+  items:
+    - title: Navidrome
+      description: Source Code, Issues and Pull Requests
+      url: https://navidrome.ajh657.cloud/
+      icon: favicon
