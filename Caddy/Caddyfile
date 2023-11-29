@@ -1,4 +1,4 @@
-route /robots.txt {
+handle /robots.txt {
 	file_server /clouddata/caddy/robots.txt
 }
 
