@@ -1,5 +1,5 @@
 route /robots.txt {
-	file /clouddata/caddy/robots.txt
+	file_server /clouddata/caddy/robots.txt
 }
 
 navidrome.ajh657.cloud {
