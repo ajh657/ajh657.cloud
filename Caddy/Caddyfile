@@ -1,9 +1,10 @@
-navidrome.ajh657.cloud {
-	handle /robots.txt {
-		file /clouddata/caddy/robots.txt
-	}
+header /robots.txt {
+  User-agent *
+  Disallow /
+}
 
-	handle {
-		reverse_proxy 192.168.0.113:4533
-	}
+status 200 /robots.txt
+
+navidrome.ajh657.cloud {
+	reverse_proxy 192.168.0.113:4533
 }
