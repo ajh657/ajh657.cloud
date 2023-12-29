@@ -14,5 +14,5 @@ services:
     volumes:
       - ./:/var/lib/ntfy
     ports:
-      - 80:4534
+      - 4534:80
     command: serve
