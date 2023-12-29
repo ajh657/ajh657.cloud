@@ -13,7 +13,7 @@ services:
       NTFY_ENABLE_LOGIN: true
       NTFY_LISTEN_HTTPS: :443
     volumes:
-      - ./:/var/lib/ntfy
+      - /clouddata/ntfy/:/var/lib/ntfy
     ports:
       - 4534:443
     command: serve
