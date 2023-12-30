@@ -11,9 +11,8 @@ services:
       NTFY_BEHIND_PROXY: true
       NTFY_ATTACHMENT_CACHE_DIR: /var/lib/ntfy/attachments
       NTFY_ENABLE_LOGIN: true
-      NTFY_LISTEN_HTTPS: :443
     volumes:
       - /clouddata/ntfy/:/var/lib/ntfy
     ports:
-      - 4534:443
+      - 4534:80
     command: serve
