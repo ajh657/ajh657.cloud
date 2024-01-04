@@ -12,7 +12,7 @@ services:
       NTFY_ATTACHMENT_CACHE_DIR: /var/lib/ntfy/attachments
       NTFY_ENABLE_LOGIN: true
     volumes:
-      - /mnt/sda1/clouddata/ntfy/:/var/lib/ntfy
+      - /clouddata/ntfy/:/var/lib/ntfy
     ports:
       - 4534:80
     command: serve
