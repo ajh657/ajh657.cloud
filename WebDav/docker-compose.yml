@@ -6,7 +6,4 @@ services:
         ports:
             - 4535:80
         volumes:
-            - /mnt/usb/WebDAV/:/data
-        environment:
-            - USERNAME=${USERNAME}
-            - PASSWORD=${PASSWORD}
+            - /mnt/usb/WebDAV/:/data:ro
