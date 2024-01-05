@@ -1,9 +1,12 @@
 version: '3'
 services:
-    webdav:
-        image: mprasil/webdav
+    docker-nginx-webdav:
+        container_name: webdav
         ports:
             - 4535:80
         volumes:
-            - /mnt/usb/WebDAV/:/site/input/
-            - /clouddata/webdav/:/site/htpasswd:ro
+            - /mnt/usb/WebDAV/:/media/data
+        environment:
+            - USERNAME=${USERNAME}
+            - PASSWORD=${PASSWORD}
+        image: maltokyo/docker-nginx-webdav
