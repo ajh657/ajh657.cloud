@@ -12,5 +12,5 @@ services:
       ND_LOGLEVEL: info
       ND_SESSIONTIMEOUT: 24h
     volumes:
-      - "/clouddata/navidrome/data/:/data"
-      - "/mnt/usb/navidrome/music/:/music:ro"
+      - "/mnt/sda1/clouddata/navidrome/data/:/data"
+      - "/mnt/sda1/clouddata/navidrome/music/:/music:ro"
