@@ -1,0 +1,13 @@
+{
+    auto_https off
+}
+
+:8080
+
+reverse_proxy {
+    to eu.posthog.com:443
+    header_up Host "analytics.ajh657.me"
+    transport http {
+        tls
+    }
+}
