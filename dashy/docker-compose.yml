@@ -1,0 +1,9 @@
+services:
+    dashy:
+        ports:
+            - 4536:80
+        volumes:
+            - /root/my-local-conf.yml:/app/public/conf.yml
+        container_name: my-dashboard
+        restart: always
+        image: lissy93/dashy:latest

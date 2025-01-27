@@ -1,0 +1,9 @@
+version: '3'
+services:
+    docker-nginx-webdav:
+        image: derkades/webdav
+        container_name: webdav
+        ports:
+            - 4535:80
+        volumes:
+            - /mnt/usb/WebDAV/:/data:ro
