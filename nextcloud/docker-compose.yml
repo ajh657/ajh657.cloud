@@ -1,0 +1,22 @@
+# ignored options for 'all-in-one'
+# --sig-proxy=false
+services:
+    all-in-one:
+        init: true
+        container_name: nextcloud-aio-mastercontainer
+        restart: always
+        ports:
+            - 80:80
+            - 8080:8080
+            - 8443:8443
+            - 4534:8443
+        environment:
+            - SKIP_DOMAIN_VALIDATION=true
+        volumes:
+            - nextcloud_aio_mastercontainer:/mnt/big-drive/nextcloud
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        image: nextcloud/all-in-one:latest
+volumes:
+    nextcloud_aio_mastercontainer:
+        external: true
+        name: nextcloud_aio_mastercontainer
