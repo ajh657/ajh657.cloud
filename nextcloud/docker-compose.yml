@@ -1,16 +1,12 @@
-# ignored options for 'all-in-one'
-# --sig-proxy=false
+version: "3.8"
 services:
     all-in-one:
         init: true
         container_name: nextcloud-aio-mastercontainer
         restart: always
-        ports:
-            - 80:80
-            - 8080:8080
-            - 8443:8443
-            - 4534:8443
-        environment:
+        environment: 
+            - APACHE_PORT=4535 
+            - APACHE_IP_BINDING=0.0.0.0
             - SKIP_DOMAIN_VALIDATION=true
         volumes:
             - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
