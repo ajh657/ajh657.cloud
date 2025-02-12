@@ -18,5 +18,4 @@ services:
         image: nextcloud/all-in-one:latest
 volumes:
     nextcloud_aio_mastercontainer:
-        external: true
         name: nextcloud_aio_mastercontainer
