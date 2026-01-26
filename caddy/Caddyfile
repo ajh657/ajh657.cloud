@@ -7,3 +7,9 @@
         reverse_proxy localhost:2480
     }
 }
+
+:443 {
+    handle /.well-known/webfinger {
+        reverse_proxy localhost:2343
+    }
+}
