@@ -1,6 +1,6 @@
 :80 {
     handle /.well-known/webfinger {
-        reverse_proxy localhost:2343
+        reverse_proxy localhost:2344
     }
 
     handle {
