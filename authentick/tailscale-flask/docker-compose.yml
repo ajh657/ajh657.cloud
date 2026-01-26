@@ -4,4 +4,4 @@ services:
       - 2343:8000
     environment:
       - DOMAIN=https://authentik.ajh657.me
-    image: ghcr.io/sudo-kraken//authentik-webfinger-proxy:latest
+    image: ghcr.io/sudo-kraken/authentik-webfinger-proxy:latest
