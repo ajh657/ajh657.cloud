@@ -3,5 +3,5 @@ services:
     ports:
       - 2344:8000
     environment:
-      - DOMAIN=https://authentik.ajh657.me
+      - DOMAIN=authentik.ajh657.me
     image: ghcr.io/sudo-kraken/authentik-webfinger-proxy:latest
