@@ -17,7 +17,7 @@ services:
     image: docker.io/library/postgres:16-alpine
     restart: unless-stopped
     volumes:
-      - /mnt/big-drive/coulddata/authentik/db:/var/lib/postgresql/data
+      - /mnt/big-drive/authentik/db:/var/lib/postgresql/data
   server:
     command: server
     depends_on:
@@ -37,8 +37,8 @@ services:
       - ${COMPOSE_PORT_HTTPS:-9443}:9443
     restart: unless-stopped
     volumes:
-      - /mnt/big-drive/coulddata/authentik/data:/data
-      - /mnt/big-drive/coulddata/authentik/media:/media
+      - /mnt/big-drive/authentik/data:/data
+      - /mnt/big-drive/authentik/media:/media
       - ./custom-templates:/templates
   worker:
     command: worker
@@ -58,7 +58,7 @@ services:
     user: root
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /mnt/big-drive/coulddata/authentik/worker-data:/data
+      - /mnt/big-drive/authentik/worker-data:/data
       - ./certs:/certs
       - ./custom-templates:/templates
 volumes:
