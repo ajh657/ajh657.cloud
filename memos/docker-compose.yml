@@ -5,6 +5,6 @@ services:
     env_file:
       - .env
     volumes:
-      - ~/.memos/:/var/opt/memos
+      - /mnt/big-drive/memos/:/var/opt/memos
     ports:
       - 2284:5230
