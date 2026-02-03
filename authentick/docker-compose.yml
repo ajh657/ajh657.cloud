@@ -2,7 +2,6 @@ services:
   postgresql:
     env_file:
       - .env
-      - .env.secret
     environment:
       POSTGRES_DB: ${PG_DB:-authentik}
       POSTGRES_PASSWORD: ${PG_PASS:?database password required}
@@ -26,7 +25,6 @@ services:
         condition: service_healthy
     env_file:
       - .env
-      - .env.secret
     environment:
       AUTHENTIK_POSTGRESQL__HOST: postgresql
       AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
@@ -49,7 +47,6 @@ services:
         condition: service_healthy
     env_file:
       - .env
-      - .env.secret
     environment:
       AUTHENTIK_POSTGRESQL__HOST: postgresql
       AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
