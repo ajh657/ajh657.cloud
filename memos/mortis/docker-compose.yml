@@ -1,0 +1,10 @@
+services:
+  mortis:
+    image: ghcr.io/mudkipme/mortis:0.25.3
+    container_name: mortis
+    ports:
+      - '2285:5231'
+    entrypoint: ['/app/mortis']
+    command: ['-grpc-addr=memos:2284']
+    depends_on:
+      - memos
