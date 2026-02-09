@@ -3,10 +3,10 @@ appConfig:
   startingView: minimal
   theme: one-dark
   customColors:
-  one-dark:
-    primary: '#588053'
-    background: '#585858'
-    background-darker: '#2B2B2B'
+    - one-dark:
+        primary: '#588053'
+        background: '#585858'
+        background-darker: '#2B2B2B'
 pageInfo:
   title: Kerdu's directory
 #  auth:
