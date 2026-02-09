@@ -17,8 +17,8 @@ sections:
       sortBy: default
       rows: 2
       cols: 3
-      showForUsers: [ajh657]
-      hideForGuests: false
+    #      showForUsers: [ajh657]
+    #      hideForGuests: false
     items:
       - title: Youtube
         description: ''
@@ -51,14 +51,14 @@ sections:
       - title: 'Gmail: hoyla.arttu@gmail.com'
         description: ''
         icon: si-gmail
-        url: https://mail.google.com/mail/u/0/#inbox
+        url: https://mail.google.com/mail/u/1/#inbox
         target: sametab
         color: '#1185FE'
         id: 3_937_gmail_1
       - title: 'Club Penguin Journey'
         description: ''
-        icon: si-gmail
-        url: https://mail.google.com/mail/u/1/#inbox
+        icon: favicon
+        url: https://play.cpjourney.net/
         target: sametab
         color: '#1185FE'
-        id: 3_937_gmail_1
+        id: 3_937_CPJ
