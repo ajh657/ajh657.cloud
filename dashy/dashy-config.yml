@@ -1,46 +1,64 @@
----
-# Page meta info, like heading, footer text and nav links
-pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
-  navLinks:
-    - title: GitHub
-      path: https://github.com/Lissy93/dashy
-    - title: Documentation
-      path: https://dashy.to/docs
-
-# Optional app settings and configuration
 appConfig:
-  theme: colorful
-
-# Main content - An array of sections, each containing an array of items
+  statusCheck: true
+  startingView: minimal
+  theme: one-dark
+pageInfo:
+  title: Kerdu's directory
+#  auth:
+#    enableOidc: true
+#    oidc:
+#      clientId: #TODO: add secret on local
+#      endpoint: https://auth.domain.com/application/o/dashy/
 sections:
-  - name: Getting Started
-    icon: fas fa-rocket
+  - name: Bookmarks
+    icon: si-gitbook
+    displayData:
+      collapsed: false
+      sortBy: default
+      rows: 2
+      cols: 3
+      showForUsers: [ajh657]
+      hideForGuests: false
     items:
-      - title: Dashy Live
-        description: Development a project management links for Dashy
-        icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-        url: https://live.dashy.to/
-        target: newtab
-      - title: GitHub
-        description: Source Code, Issues and Pull Requests
-        url: https://github.com/lissy93/dashy
-        icon: favicon
-      - title: Docs
-        description: Configuring & Usage Documentation
-        provider: Dashy.to
-        icon: far fa-book
-        url: https://dashy.to/docs
-      - title: Showcase
-        description: See how others are using Dashy
-        url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-        icon: far fa-grin-hearts
-      - title: Config Guide
-        description: See full list of configuration options
-        url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-        icon: fas fa-wrench
-      - title: Support
-        description: Get help with Dashy, raise a bug, or get in contact
-        url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-        icon: far fa-hands-helping
+      - title: Youtube
+        description: ''
+        icon: si-youtube
+        url: https://www.youtube.com/feed/subscriptions
+        target: sametab
+        color: '#FF0000'
+        id: 0_937_youtube
+      - title: Bluesky
+        description: ''
+        icon: si-bluesky
+        url: https://bsky.app/
+        target: sametab
+        color: '#1185FE'
+        id: 1_937_bluesky
+      - title: Steam
+        description: ''
+        icon: si-steam
+        url: https://store.steampowered.com/
+        target: sametab
+        color: '#1185FE'
+        id: 2_937_steam
+      - title: 'Gmail: aahoo01@gmail.com'
+        description: ''
+        icon: si-gmail
+        url: https://mail.google.com/mail/u/0/#inbox
+        target: sametab
+        color: '#1185FE'
+        id: 3_937_gmail_1
+      - title: 'Gmail: hoyla.arttu@gmail.com'
+        description: ''
+        icon: si-gmail
+        url: https://mail.google.com/mail/u/0/#inbox
+        target: sametab
+        color: '#1185FE'
+        id: 3_937_gmail_1
+      - title: 'Club Penguin Journey'
+        description: ''
+        icon: si-gmail
+        url: https://mail.google.com/mail/u/1/#inbox
+        target: sametab
+        color: '#1185FE'
+        id: 3_937_gmail_1
