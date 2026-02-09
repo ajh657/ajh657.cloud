@@ -2,6 +2,130 @@ appConfig:
   statusCheck: true
   startingView: minimal
   theme: one-dark
+  customColors:
+    one-dark:
+      primary: '#588053'
+      background: '#2a2a2a'
+      background-darker: '#1a1a1a'
+      info: '#04e4f4'
+      success: '#20e253'
+      warning: '#f6f000'
+      error: '#fca016'
+      danger: '#f80363'
+      neutral: '#272f4d'
+      white: '#fff'
+      black: '#000'
+      item-group-background: none
+      medium-grey: '#5e6474'
+      item-background: '#1a1a1a'
+      item-background-hover: '#1a1a1a'
+      transparent-70: rgba(0,0,0,0.7019607843137254)
+      transparent-50: rgba(0,0,0,0.5019607843137255)
+      transparent-30: rgba(0,0,0,0.30196078431372547)
+      transparent-white-70: hsla(0,0%,100%,0.7019607843137254)
+      transparent-white-50: hsla(0,0%,100%,0.5019607843137255)
+      transparent-white-30: hsla(0,0%,100%,0.30196078431372547)
+      transparent-white-10: hsla(0,0%,100%,0.058823529411764705)
+      heading-text-color: '#588053'
+      nav-link-text-color: '#588053'
+      nav-link-background-color: '#2a2a2a'
+      nav-link-text-color-hover: '#588053'
+      nav-link-background-color-hover: '#2a2a2a'
+      nav-link-border-color: transparent
+      nav-link-border-color-hover: transparent
+      nav-link-shadow: '4px 4px 0px #1a1a1a,-3px 0px 0px #588053,2px 2px 6px #000'
+      nav-link-shadow-hover: '6px 6px 0px #1a1a1a,-4px 0px 0px #588053,2px 2px 9px #000'
+      item-text-color: '#588053'
+      item-text-color-hover: '#588053'
+      item-group-outer-background: none
+      item-group-heading-text-color: '#fff'
+      item-group-heading-text-color-hover: '#588053'
+      settings-text-color: '#588053'
+      settings-background: '#2a2a2a'
+      config-settings-color: '#588053'
+      config-settings-background: '#1a1a1a'
+      config-code-color: '#2a2a2a'
+      config-code-background: '#fff'
+      code-editor-color: '#000'
+      code-editor-background: '#fff'
+      widget-text-color: '#588053'
+      widget-background-color: '#1a1a1a'
+      widget-accent-color: '#2a2a2a'
+      widget-base-background: transparent
+      interactive-editor-color: '#588053'
+      interactive-editor-background: '#2a2a2a'
+      interactive-editor-background-darker: '#1a1a1a'
+      cloud-backup-color: '#588053'
+      cloud-backup-background: '#1a1a1a'
+      search-container-background: '#1a1a1a'
+      search-field-background: '#2a2a2a'
+      search-label-color: '#588053'
+      footer-text-color: '#5e6474'
+      footer-text-color-link: '#588053'
+      footer-background: '#1a1a1a'
+      context-menu-background: '#2a2a2a'
+      context-menu-color: '#588053'
+      context-menu-secondary-color: '#1a1a1a'
+      side-bar-background: '#1a1a1a'
+      side-bar-background-lighter: '#2a2a2a'
+      side-bar-color: '#588053'
+      side-bar-item-background: '#1a1a1a'
+      side-bar-item-color: '#588053'
+      workspace-web-content-background: '#2a2a2a'
+      minimal-view-background-color: '#2a2a2a'
+      minimal-view-title-color: '#588053'
+      minimal-view-settings-color: '#588053'
+      minimal-view-section-heading-color: '#588053'
+      minimal-view-section-heading-background: '#1a1a1a'
+      minimal-view-search-background: '#1a1a1a'
+      minimal-view-search-color: '#588053'
+      minimal-view-group-color: '#588053'
+      minimal-view-group-background: '#1a1a1a'
+      login-form-color: '#588053'
+      login-form-background: '#2a2a2a'
+      login-form-background-secondary: '#1a1a1a'
+      about-page-color: '#fff'
+      about-page-background: '#2a2a2a'
+      about-page-accent: '#588053'
+      scroll-bar-color: '#588053'
+      scroll-bar-background: '#1a1a1a'
+      highlight-color: '#2a2a2a'
+      highlight-background: '#588053'
+      progress-bar: '#588053'
+      loading-screen-color: '#588053'
+      loading-screen-background: '#2a2a2a'
+      status-check-tooltip-background: '#1a1a1a'
+      status-check-tooltip-color: '#588053'
+      welcome-popup-background: '#1a1a1a'
+      welcome-popup-text-color: '#588053'
+      toast-background: '#588053'
+      toast-color: '#2a2a2a'
+      description-tooltip-background: '#1a1a1a'
+      description-tooltip-color: '#588053'
+      outline-color: none
+      curve-factor: 4px
+      curve-factor-navbar: 6px
+      curve-factor-small: 2px
+      dimming-factor: '0.7'
+      scroll-bar-width: 8px
+      header-height: 6.3rem
+      footer-height: 128px
+      item-group-padding: 5px
+      item-shadow: '4px 4px 0px #1a1a1a,-3px 0px 0px #588053,2px 2px 6px #000'
+      item-hover-shadow: '6px 6px 0px #1a1a1a,-5px 0px 0px #588053,2px 2px 9px #000'
+      item-icon-transform: drop-shadow(2px 4px 6px rgba(0,0,0,0.5019607843137255)) saturate(0.95)
+      item-icon-transform-hover: drop-shadow(4px 8px 3px rgba(0,0,0,0.5019607843137255)) saturate(2)
+      item-group-shadow: none
+      context-menu-shadow: '4px 4px 0px #1a1a1a,-3px 0px 0px #588053,2px 2px 6px #000'
+      section-max-height: 3000px
+      settings-container-shadow: none
+      side-bar-width: 3.5rem
+      tooltip-arrow-size: 6px
+      tooltip-width: 250px
+      tooltip-padding: 0.2rem
+      font-body: '"Roboto",serif'
+      font-headings: '"Podkova","Roboto",serif'
+      font-monospace: '"PTMono","Courier New",monospace'
 pageInfo:
   title: Kerdu's directory
 #  auth:
