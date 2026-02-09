@@ -10,7 +10,7 @@ pageInfo:
 #      clientId: #TODO: add secret on local
 #      endpoint: https://auth.domain.com/application/o/dashy/
 sections:
-  - name: Bookmarks
+  - name: Kerdu's Bookmarks
     icon: si-gitbook
     displayData:
       collapsed: false
@@ -26,6 +26,7 @@ sections:
         url: https://www.youtube.com/feed/subscriptions
         target: sametab
         color: '#FF0000'
+        statusCheck: false
         id: 0_937_youtube
       - title: Bluesky
         description: ''
@@ -33,32 +34,37 @@ sections:
         url: https://bsky.app/
         target: sametab
         color: '#1185FE'
+        statusCheck: false
         id: 1_937_bluesky
       - title: Steam
         description: ''
         icon: si-steam
         url: https://store.steampowered.com/
         target: sametab
-        color: '#1185FE'
+        color: '#000000'
+        statusCheck: false
         id: 2_937_steam
       - title: 'Gmail: aahoo01@gmail.com'
         description: ''
         icon: si-gmail
         url: https://mail.google.com/mail/u/0/#inbox
         target: sametab
-        color: '#1185FE'
+        color: '#EA4335'
+        statusCheck: false
         id: 3_937_gmail_1
       - title: 'Gmail: hoyla.arttu@gmail.com'
         description: ''
         icon: si-gmail
         url: https://mail.google.com/mail/u/1/#inbox
         target: sametab
-        color: '#1185FE'
+        color: '#EA4335'
         id: 3_937_gmail_1
+        statusCheck: false
       - title: 'Club Penguin Journey'
         description: ''
         icon: favicon
         url: https://play.cpjourney.net/
         target: sametab
-        color: '#1185FE'
+        color: '#00529B'
+        statusCheck: false
         id: 3_937_CPJ
