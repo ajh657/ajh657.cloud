@@ -1,7 +1,7 @@
 services:
   dashboard:
     ports:
-      - 2284:8070
+      - 2285:8070
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: nuclio-dashboard
