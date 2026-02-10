@@ -128,11 +128,11 @@ appConfig:
       font-monospace: '"PTMono","Courier New",monospace'
 pageInfo:
   title: Kerdu's directory
-#  auth:
-#    enableOidc: true
-#    oidc:
-#      clientId: #TODO: add secret on local
-#      endpoint: https://auth.domain.com/application/o/dashy/
+  auth:
+    enableOidc: true
+    oidc:
+      clientId: zPsyxnksJ4NUfUqVNUjUbdC5frc5frKPrxcWMVWE
+      endpoint: https://authentik.ajh657.me/application/o/dashy/
 sections:
   - name: Kerdu's Bookmarks
     icon: si-gitbook
@@ -140,9 +140,9 @@ sections:
       collapsed: false
       sortBy: default
       rows: 2
-      cols: 3
-    #      showForUsers: [ajh657]
-    #      hideForGuests: false
+      cols: 2
+      showForUsers: [ajh657]
+      hideForGuests: false
     items:
       - title: Youtube
         description: ''
@@ -192,3 +192,23 @@ sections:
         color: '#00529B'
         statusCheck: false
         id: 3_937_CPJ
+  - name: Self hosted
+    icon: si-serverless
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Immich
+        icon: si-immich
+        url: https://immich.ajh657.cloud/
+        target: sametab
+        color: '#4250AF'
+        id: 0_1073_immich
+      - title: Memos
+        icon: https://memos.ajh657.cloud/logo.webp
+        url: https://memos.ajh657.cloud/
+        target: sametab
+        id: 1_1073_memos
