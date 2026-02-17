@@ -1,22 +1,54 @@
 services:
-  all-in-one:
-    init: true
-    container_name: nextcloud-aio-mastercontainer
+  nextcloud-db:
+    # Note: Check the recommend version here: https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html#server
+    image: postgres:alpine
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB_FILE=/run/secrets/postgres_db
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+    secrets:
+      - postgres_db
+      - postgres_password
+      - postgres_user
+  nextcloud-redis:
+    image: redis:alpine
+    restart: always
+
+  nextcloud-app:
+    image: nextcloud
     restart: always
     ports:
-      - 2277:8080
-      - 2287:8443
-    environment:
-      - SKIP_DOMAIN_VALIDATION=true
+      - 8080:80
     volumes:
-      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    image: nextcloud/all-in-one:latest
-volumes:
-  nextcloud_aio_mastercontainer:
-    name: nextcloud_aio_mastercontainer
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /mnt/big-drive/nextcloud
+      - nextcloud:/var/www/html
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_DB_FILE=/run/secrets/postgres_db
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - NEXTCLOUD_ADMIN_PASSWORD_FILE=/run/secrets/nextcloud_admin_password
+      - NEXTCLOUD_ADMIN_USER_FILE=/run/secrets/nextcloud_admin_user
+    depends_on:
+      - nextcloud-redis
+      - nextcloud-db
+    secrets:
+      - nextcloud_admin_password
+      - nextcloud_admin_user
+      - postgres_db
+      - postgres_password
+      - postgres_user
+
+secrets:
+  nextcloud_admin_password:
+    file: ./.env.nextcloud_admin_password # put admin password in this file
+  nextcloud_admin_user:
+    file: ./.env.nextcloud_admin_user # put admin username in this file
+  postgres_db:
+    file: ./.env.postgres_db # put postgresql db name in this file
+  postgres_password:
+    file: ./.env.postgres_password # put postgresql password in this file
+  postgres_user:
+    file: ./.env.postgres_user # put postgresql username in this file
