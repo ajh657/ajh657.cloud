@@ -4,7 +4,7 @@ services:
     image: postgres:alpine
     restart: always
     ports:
-      - 1051:8080
+      - 1051:5432
     volumes:
       - /docker/cache/db/nextcloud:/var/lib/postgresql/data
     environment:
