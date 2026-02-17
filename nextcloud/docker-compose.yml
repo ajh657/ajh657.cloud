@@ -3,6 +3,8 @@ services:
     # Note: Check the recommend version here: https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html#server
     image: postgres:alpine
     restart: always
+    ports:
+      - 1051:8080
     volumes:
       - /docker/cache/db/nextcloud:/var/lib/postgresql/data
     environment:
@@ -25,7 +27,7 @@ services:
     volumes:
       - /mnt/big-drive/nextcloud:/var/www/html
     environment:
-      - POSTGRES_HOST=db
+      - POSTGRES_HOST=localhost:1051
       - POSTGRES_DB_FILE=/run/secrets/postgres_db
       - POSTGRES_USER_FILE=/run/secrets/postgres_user
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
