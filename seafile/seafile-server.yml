@@ -43,7 +43,7 @@ services:
     container_name: seafile
     restart: unless-stopped
     ports:
-      - '1050:8082'
+      - '1050:8000'
     volumes:
       - ${SEAFILE_VOLUME:-/opt/seafile-data}:/shared
     environment:
