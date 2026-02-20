@@ -15,6 +15,11 @@ services:
       - postgres_db
       - postgres_password
       - postgres_user
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready']
+      interval: 1s
+      timeout: 5s
+      retries: 10
   nextcloud-redis:
     image: redis:alpine
     restart: always
