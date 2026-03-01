@@ -1,0 +1,12 @@
+ENABLE_LDAP = True
+LDAP_SERVER_URL = 'ldap://authentik.ajh657.me'
+LDAP_BASE_DN = 'cn=ajh657,ou=users,dc=ajh657,dc=me'
+LDAP_ADMIN_DN = 'ajh657@ajh657.me'
+LDAP_ADMIN_PASSWORD = 'yourpassword'
+LDAP_PROVIDER = 'ldap'
+LDAP_LOGIN_ATTR = 'email'
+LDAP_CONTACT_EMAIL_ATTR = ''
+LDAP_USER_ROLE_ATTR = ''
+LDAP_USER_FIRST_NAME_ATTR = 'givenName'
+LDAP_USER_LAST_NAME_ATTR = 'sn'
+LDAP_USER_NAME_REVERSE = False
