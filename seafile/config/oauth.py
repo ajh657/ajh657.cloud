@@ -6,13 +6,15 @@ OAUTH_CREATE_UNKNOWN_USER = True
 # Automatically activate Seafile users when they log in for the first time. Defaults to True.
 OAUTH_ACTIVATE_USER_AFTER_CREATION = True
 
+OAUTH_ENABLE_INSECURE_TRANSPORT = True
+
 OAUTH_CLIENT_ID = 'a1cz1NBO4lI5C3n6Nj9Wo3iGb5ZYwpOusjyKNxUa'
 OAUTH_CLIENT_SECRET = '<client_secret>'
 
 OAUTH_REDIRECT_URL = 'https://seafile.ajh657.cloud/oauth/callback/'
 
 OAUTH_PROVIDER = 'authentik'
-OAUTH_PROVIDER_DOMAIN = 'https://authentik.ajh657.me/'
+OAUTH_PROVIDER_DOMAIN = 'https://authentik.ajh657.me'
 OAUTH_AUTHORIZATION_URL = 'https://authentik.ajh657.me/application/o/authorize/'
 OAUTH_TOKEN_URL = 'https://authentik.ajh657.me/application/o/token/'
 OAUTH_USER_INFO_URL = 'https://authentik.ajh657.me/application/o/userinfo/'
