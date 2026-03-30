@@ -14,5 +14,5 @@ services:
     volumes:
       - /clouddata/ntfy/:/var/lib/ntfy
     ports:
-      - 4534:80
+      - 1060:80
     command: serve
