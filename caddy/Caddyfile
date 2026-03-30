@@ -4,12 +4,15 @@
     }
 
     handle {
-        reverse_proxy localhost:2480
+        reverse_proxy localhost:180
     }
 }
 
 :443 {
     handle /.well-known/webfinger {
-        reverse_proxy localhost:2344
+        reverse_proxy localhost:1001
+    }
+    handle {
+        reverse_proxy localhost:180
     }
 }
