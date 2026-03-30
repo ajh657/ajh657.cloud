@@ -4,7 +4,7 @@
     }
 
     handle {
-        reverse_proxy localhost:180
+        reverse_proxy localhost:1030
     }
 }
 
@@ -13,6 +13,6 @@
         reverse_proxy localhost:1001
     }
     handle {
-        reverse_proxy localhost:180
+        reverse_proxy localhost:1030
     }
 }
