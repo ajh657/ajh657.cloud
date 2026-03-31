@@ -11,7 +11,7 @@ OAUTH_ENABLE_INSECURE_TRANSPORT = True
 OAUTH_CLIENT_ID = 'a1cz1NBO4lI5C3n6Nj9Wo3iGb5ZYwpOusjyKNxUa'
 OAUTH_CLIENT_SECRET = '<client_secret>'
 
-OAUTH_REDIRECT_URL = 'https://seafile.ajh657.cloud/oauth/callback/'
+OAUTH_REDIRECT_URL = 'https://seafile.ajh657.me/oauth/callback/'
 
 OAUTH_PROVIDER = 'authentik'
 OAUTH_PROVIDER_DOMAIN = 'https://authentik.ajh657.me'
@@ -28,7 +28,7 @@ OAUTH_ATTRIBUTE_MAP = {
 }
 
 # Optionally set the following variable to automatically redirect users to the login page
-LOGIN_URL = 'https://seafile.ajh657.cloud/oauth/login/'
+LOGIN_URL = 'https://seafile.ajh657.me/oauth/login/'
 
 # Enable client to open an external browser for single sign on
 # When it is false, the old builtin browser is opened for single sign on
