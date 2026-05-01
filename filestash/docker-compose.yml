@@ -5,7 +5,7 @@ services:
     image: machines/filestash:latest
     restart: always
     environment:
-      - APPLICATION_URL=filestash.ajh657.me
+      - APPLICATION_URL=fs.ajh657.me
       - CANARY=false
       - OFFICE_URL=http://wopi_server:9980
       - OFFICE_FILESTASH_URL=http://app:8334
