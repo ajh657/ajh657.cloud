@@ -18,7 +18,7 @@ services:
       AIO_DISABLE_BACKUP_SECTION: false
       SKIP_DOMAIN_VALIDATION: true
       APACHE_PORT: 11000 # Is needed when running behind a web server or reverse proxy (like Apache, Nginx, Caddy, Cloudflare Tunnel and else). See https://github.com/nextcloud/all-in-one/blob/main/reverse-proxy.md
-      APACHE_IP_BINDING: 127.0.0.1 # Should be set when running behind a web server or reverse proxy (like Apache, Nginx, Caddy, Cloudflare Tunnel and else) that is running on the same host. See https://github.com/nextcloud/all-in-one/blob/main/reverse-proxy.md
+      APACHE_IP_BINDING: 0.0.0.0 # Should be set when running behind a web server or reverse proxy (like Apache, Nginx, Caddy, Cloudflare Tunnel and else) that is running on the same host. See https://github.com/nextcloud/all-in-one/blob/main/reverse-proxy.md
       # APACHE_ADDITIONAL_NETWORK: frontend_net # (Optional) Connect the apache container to an additional docker network. Needed when behind a web server or reverse proxy (like Apache, Nginx, Caddy, Cloudflare Tunnel and else) running in a different docker network on same server. See https://github.com/nextcloud/all-in-one/blob/main/reverse-proxy.md
       # BORG_RETENTION_POLICY: --keep-within=7d --keep-weekly=4 --keep-monthly=6 # Allows to adjust borgs retention policy. See https://github.com/nextcloud/all-in-one#how-to-adjust-borgs-retention-policy
       # AIO_LOG_LEVEL: warn # Allows to globally adjust the log level of the included AIO components. Supported values: debug, info, warn, error. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-log-level-for-aio-components
@@ -39,6 +39,13 @@ services:
       # SKIP_DOMAIN_VALIDATION: false # This should only be set to true if things are correctly configured. See https://github.com/nextcloud/all-in-one#how-to-skip-the-domain-validation
       # TALK_PORT: 3478 # This allows to adjust the port that the talk container is using which is exposed on the host. See https://github.com/nextcloud/all-in-one#how-to-adjust-the-talk-port
       # WATCHTOWER_DOCKER_SOCKET_PATH: /var/run/docker.sock # Needs to be specified if the docker socket on the host is not located in the default '/var/run/docker.sock'. Otherwise mastercontainer updates will fail. For macos it needs to be '/var/run/docker.sock'
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=your-cloudflared-tunnel-token
 
 #   # Optional: Caddy reverse proxy. See https://github.com/nextcloud/all-in-one/discussions/575
 #   # Alternatively, use Tailscale if you don't have a domain yet. See https://github.com/nextcloud/all-in-one/discussions/6817
