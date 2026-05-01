@@ -1,0 +1,5 @@
+services:
+  filestash:
+    ports:
+      - 1040:80
+    image: machines/filestash
