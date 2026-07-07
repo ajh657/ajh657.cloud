@@ -26,7 +26,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - tailscale-socket:/var/run/tailscale
     environment:
-      - DEFAULT_SERVICE_TAGS=tag:${TAILSCALE_HOST_TAG}
+      - DEFAULT_SERVICE_TAGS=tag:${TAILSCALE_SERVICE_TAG}
       - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
       - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
 
