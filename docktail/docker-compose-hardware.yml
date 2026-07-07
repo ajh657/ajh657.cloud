@@ -1,4 +1,4 @@
-service:
+services:
   docktail:
     image: ghcr.io/marvinvr/docktail:latest
     depends_on:
