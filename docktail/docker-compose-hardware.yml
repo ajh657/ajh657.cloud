@@ -1,0 +1,24 @@
+service:
+  docktail:
+    image: ghcr.io/marvinvr/docktail:latest
+    depends_on:
+      - tailscale
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/tailscale:/var/run/tailscale
+    environment:
+      - DEFAULT_SERVICE_TAGS=tag:${TAILSCALE_SERVICE_TAG}
+      - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
+      - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
+
+  docktail-test:
+    image: nginx:latest
+    # No ports needed. DockTail proxies directly to the container IP.
+    labels:
+      - 'docktail.service.enable=true'
+      - 'docktail.service.name=${TAILSCALE_SERVICE_TAG}-healthcheck'
+      - 'docktail.service.port=80'
+volumes:
+  tailscale-state:
+  tailscale-socket:
