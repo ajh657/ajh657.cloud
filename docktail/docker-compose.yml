@@ -35,7 +35,7 @@ services:
     # No ports needed. DockTail proxies directly to the container IP.
     labels:
       - 'docktail.service.enable=true'
-      - 'docktail.service.name=${TAILSCALE_HOST_TAG}-healthcheck'
+      - 'docktail.service.name=${TAILSCALE_SERVICE_TAG}-healthcheck'
       - 'docktail.service.port=80'
 volumes:
   tailscale-state:
