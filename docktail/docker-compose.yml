@@ -1,11 +1,42 @@
 services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    hostname: ${TAILSCALE_HOST}
+    environment:
+      - TS_AUTHKEY=${TAILSCALE_AUTH_KEY}
+      - TS_EXTRA_ARGS=--advertise-tags=tag:${TAILSCALE_HOST_TAG}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_SOCKET=/var/run/tailscale/tailscaled.sock
+    volumes:
+      - tailscale-state:/var/lib/tailscale
+      - tailscale-socket:/var/run/tailscale
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    network_mode: host
+    restart: unless-stopped
+
   docktail:
     image: ghcr.io/marvinvr/docktail:latest
+    depends_on:
+      - tailscale
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/run/tailscale:/var/run/tailscale
+      - tailscale-socket:/var/run/tailscale
     environment:
-      # Optional but recommended. Enables automatic service creation.
+      - DEFAULT_SERVICE_TAGS=tag:${TAILSCALE_HOST_TAG}
       - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
       - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
+
+  docktail-test:
+    image: nginx:latest
+    # No ports needed. DockTail proxies directly to the container IP.
+    labels:
+      - 'docktail.service.enable=true'
+      - 'docktail.service.name=${TAILSCALE_HOST_TAG}-healthcheck'
+      - 'docktail.service.port=80'
+volumes:
+  tailscale-state:
+  tailscale-socket:
