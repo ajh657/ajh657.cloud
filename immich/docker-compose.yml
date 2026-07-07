@@ -27,9 +27,27 @@ services:
     depends_on:
       - redis
       - database
+    labels:
+      - 'docktail.service.enable=true'
+      - 'docktail.service.name=immich'
+      - 'docktail.service.port=2283'
     restart: always
     healthcheck:
       disable: false
+
+  immich-public-proxy:
+    image: alangrainger/immich-public-proxy:latest
+    container_name: immich-public-proxy
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      PUBLIC_BASE_URL: https://immich.ajh657.me
+      IMMICH_URL: http://immich.wagtail-degree.ts.net
+    healthcheck:
+      test: curl -s http://localhost:3000/share/healthcheck -o /dev/null || exit 1
+      start_period: 10s
+      timeout: 5s
 
   redis:
     container_name: immich_redis

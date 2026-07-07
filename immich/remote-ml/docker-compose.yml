@@ -12,6 +12,10 @@ services:
     restart: always
     ports:
       - 3003:3003
+    labels:
+      - 'docktail.service.enable=true'
+      - 'docktail.service.name=ajh-desktop-immich-remote-ml'
+      - 'docktail.service.port=3003'
 
 volumes:
   model-cache:
