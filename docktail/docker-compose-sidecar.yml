@@ -32,6 +32,7 @@ services:
 
   docktail-test:
     image: nginx:latest
+    restart: unless-stopped
     # No ports needed. DockTail proxies directly to the container IP.
     labels:
       - 'docktail.service.enable=true'
