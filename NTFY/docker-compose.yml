@@ -4,7 +4,7 @@ services:
     image: binwiederhier/ntfy
     restart: unless-stopped
     environment:
-      NTFY_BASE_URL: https://ntfy.ajh657.me
+      NTFY_BASE_URL: https://ntfy.barking-gamut.ts.net
       NTFY_CACHE_FILE: /var/lib/ntfy/cache.db
       NTFY_AUTH_FILE: /var/lib/ntfy/auth.db
       NTFY_AUTH_DEFAULT_ACCESS: deny-all
@@ -12,7 +12,12 @@ services:
       NTFY_ATTACHMENT_CACHE_DIR: /var/lib/ntfy/attachments
       NTFY_ENABLE_LOGIN: true
     volumes:
-      - /clouddata/ntfy/:/var/lib/ntfy
+      - /mnt/big-drive/ntfy/:/var/lib/ntfy
     ports:
       - 1060:80
+    labels:
+      - 'docktail.service.enable=true'
+      - 'docktail.service.name=ntfy'
+      - 'docktail.service.port=1060'
+      - 'docktail.service.service-port=443'
     command: serve

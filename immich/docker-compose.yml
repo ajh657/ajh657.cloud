@@ -31,6 +31,7 @@ services:
       - 'docktail.service.enable=true'
       - 'docktail.service.name=immich'
       - 'docktail.service.port=2283'
+      - 'docktail.service.service-port=443'
     restart: always
     healthcheck:
       disable: false
@@ -43,7 +44,7 @@ services:
       - '3000:3000'
     environment:
       PUBLIC_BASE_URL: https://immich.ajh657.me
-      IMMICH_URL: http://immich.wagtail-degree.ts.net
+      IMMICH_URL: https://immich.barking-gamut.ts.net
     healthcheck:
       test: curl -s http://localhost:3000/share/healthcheck -o /dev/null || exit 1
       start_period: 10s
