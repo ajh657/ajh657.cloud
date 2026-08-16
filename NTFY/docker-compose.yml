@@ -13,11 +13,9 @@ services:
       NTFY_ENABLE_LOGIN: true
     volumes:
       - /mnt/big-drive/ntfy/:/var/lib/ntfy
-    ports:
-      - 1060:80
     labels:
       - 'docktail.service.enable=true'
       - 'docktail.service.name=ntfy'
-      - 'docktail.service.port=1060'
+      - 'docktail.service.port=80'
       - 'docktail.service.service-port=443'
     command: serve
