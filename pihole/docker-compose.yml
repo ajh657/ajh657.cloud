@@ -23,7 +23,7 @@ services:
       #- './etc-dnsmasq.d:/etc/dnsmasq.d'
     labels:
       - 'docktail.service.enable=true'
-      - 'docktail.service.name=immich'
+      - 'docktail.service.name=pihole'
       - 'docktail.service.port=80'
       - 'docktail.service.service-port=443'
     restart: unless-stopped
