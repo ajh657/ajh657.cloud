@@ -1,6 +1,6 @@
 services:
   file-test:
-    image: alpine:latest
+    image: hello-world
     volumes:
       - remote-data:/remote-data
 
