@@ -1,0 +1,13 @@
+services:
+  file-test:
+    image: alpine:latest
+    volumes:
+      - remote-data:/remote-data
+
+volumes:
+  remote-data:
+    driver: local
+    driver_opts:
+      type: cifs
+      device: "//u427590-sub5.your-storagebox.de\u427590-sub5"
+      o: 'addr=u427590-sub5.your-storagebox.de,username=${SMB_USERNAME},password=${SMB_PASSWORD},vers=3.0'
