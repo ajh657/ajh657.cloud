@@ -1,6 +1,6 @@
 services:
   file-test:
-    image: hello-world
+    image: ubuntu
     volumes:
       - remote-data:/remote-data
 
