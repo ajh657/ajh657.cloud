@@ -18,7 +18,7 @@ services:
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
     volumes:
       # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
-      - remote-data:/data/storage
+      - /mnt/immich-hz-storage/:/data/storage
       - /clouddata/immich-reborn/db:/data/database
       - /etc/localtime:/etc/localtime:ro
     env_file:
@@ -75,11 +75,3 @@ services:
     restart: always
     healthcheck:
       disable: false
-
-volumes:
-  remote-data:
-    driver: local
-    driver_opts:
-      type: cifs
-      device: '//u427590-sub5.your-storagebox.de/u427590-sub5'
-      o: 'addr=u427590-sub5.your-storagebox.de,file_mode=0777,dir_mode=0777,username=${SMB_USERNAME},password=${SMB_PASSWORD},vers=3.0'
