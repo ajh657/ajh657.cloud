@@ -34,6 +34,9 @@ services:
       - 'docktail.service.port=2283'
       - 'docktail.service.service-port=443'
     restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
     healthcheck:
       disable: false
 
