@@ -19,7 +19,7 @@ services:
     volumes:
       # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
       - remote-data:/data/storage
-      - /clouddata/immich-db/database/:/data/database
+      - /clouddata/immich-reborn/db:/data/database
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
