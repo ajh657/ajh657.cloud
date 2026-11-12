@@ -12,7 +12,6 @@ name: immich
 services:
   immich-server:
     container_name: immich_server
-    user: 1000:1000
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
     # extends:
     #   file: hwaccel.transcoding.yml
@@ -35,9 +34,6 @@ services:
       - 'docktail.service.port=2283'
       - 'docktail.service.service-port=443'
     restart: always
-    environment:
-      - PUID=1000
-      - PGID=1000
     healthcheck:
       disable: false
 
