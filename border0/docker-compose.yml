@@ -2,6 +2,7 @@ services:
     tailzero:
         tty: true
         stdin_open: true
+        network_mode: "host"
         volumes:
             - tailzero-volume:/var/lib/tailzero
         image: ghcr.io/borderzero/tailzero
