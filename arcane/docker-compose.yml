@@ -13,7 +13,7 @@ services:
       - ARCANE_ENCRYPTION_KEY=${ENCRYPTION_KEY}
       - ARCANE_PROJECTS_DIRECTORY=/opt/docker
     cgroup: host
-    label:
+    labels:
       - 'docktail.service.enable=true'
       - 'docktail.service.name=arcane'
       - 'docktail.service.port=3552'
