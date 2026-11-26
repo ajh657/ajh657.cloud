@@ -1,0 +1,12 @@
+services:
+    tailzero:
+        tty: true
+        stdin_open: true
+        volumes:
+            - tailzero-volume:/var/lib/tailzero
+        image: ghcr.io/borderzero/tailzero
+        command: --border0-invite-code ${BORDER0_INVITE_CODE}
+volumes:
+    tailzero-volume:
+        external: true
+        name: tailzero-volume
