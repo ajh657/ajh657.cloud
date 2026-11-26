@@ -10,7 +10,7 @@ services:
       - ARCANE_APP_URL=https://arcane.ajh-server-rsp.barking-gamut.ts.net
       - PUID=1000
       - PGID=1000
-      - ARCANE_ENCRYPTION_KEY=<your-encryption-key>
+      - ARCANE_ENCRYPTION_KEY=${ENCRYPTION_KEY}
       - ARCANE_PROJECTS_DIRECTORY=/opt/docker
     cgroup: host
     label:
